@@ -4,11 +4,9 @@ NULLABLE = {'blank': True, 'null': True}
 
 
 class Course(models.Model):
-
     title = models.CharField(max_length=50, verbose_name='Название')
     image = models.ImageField(upload_to='courses', verbose_name='Картинка', **NULLABLE)
     description = models.CharField(max_length=500, verbose_name='Описание', **NULLABLE)
-
 
     def __str__(self):
         return f'{self.title}'
@@ -19,7 +17,6 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
-
     title = models.CharField(max_length=50, verbose_name='Название')
     image = models.ImageField(upload_to='courses', verbose_name='Картинка', **NULLABLE)
     description = models.CharField(max_length=500, verbose_name='Описание', **NULLABLE)

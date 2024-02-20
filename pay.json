@@ -1,0 +1,86 @@
+[
+  {
+    "model": "users.pay",
+    "pk": 2,
+    "fields": {
+      "user": null,
+      "lesson": 2,
+      "course": 2,
+      "date": "2024-02-19T10:11:16.202Z",
+      "payment_amount": null,
+      "payment_method": null
+    }
+  },
+  {
+    "model": "users.pay",
+    "pk": 3,
+    "fields": {
+      "user": null,
+      "lesson": 2,
+      "course": 2,
+      "date": "2024-02-19T10:11:16.202Z",
+      "payment_amount": null,
+      "payment_method": null
+    }
+  },
+  {
+    "model": "users.pay",
+    "pk": 4,
+    "fields": {
+      "user": null,
+      "lesson": 2,
+      "course": 2,
+      "date": "2024-02-19T00:00:00Z",
+      "payment_amount": null,
+      "payment_method": null
+    }
+  },
+  {
+    "model": "users.pay",
+    "pk": 5,
+    "fields": {
+      "user": null,
+      "lesson": 2,
+      "course": 2,
+      "date": "2024-02-19T10:11:28.737Z",
+      "payment_amount": null,
+      "payment_method": null
+    }
+  },
+  {
+    "model": "users.pay",
+    "pk": 6,
+    "fields": {
+      "user": null,
+      "lesson": 2,
+      "course": 2,
+      "date": "2024-02-19T10:11:43.586Z",
+      "payment_amount": null,
+      "payment_method": null
+    }
+  },
+  {
+    "model": "users.pay",
+    "pk": 7,
+    "fields": {
+      "user": null,
+      "lesson": 2,
+      "course": 2,
+      "date": "2024-02-19T10:11:44.752Z",
+      "payment_amount": null,
+      "payment_method": null
+    }
+  },
+  {
+    "model": "users.pay",
+    "pk": 8,
+    "fields": {
+      "user": null,
+      "lesson": 2,
+      "course": 2,
+      "date": "2024-02-19T10:11:45.761Z",
+      "payment_amount": null,
+      "payment_method": null
+    }
+  }
+]
