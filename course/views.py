@@ -1,5 +1,4 @@
 from rest_framework import viewsets, generics, permissions
-from rest_framework.permissions import IsAuthenticated
 
 from course.models import Course, Lesson
 from course.permissions import IsOwner
