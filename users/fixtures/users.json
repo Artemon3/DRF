@@ -1,0 +1,22 @@
+[
+{
+  "model": "users.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$XBBO1chydHZHeCH4uwfsxN$yW/NnfytOjZZDTiN0B8c9tNH3C7o8L9ndvqiam62ZRw=",
+    "last_login": "2024-02-25T12:50:18.561Z",
+    "is_superuser": true,
+    "first_name": "Artem",
+    "last_name": "Levkin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2024-02-25T11:52:59.155Z",
+    "email": "levkin_mizuno@mail.ru",
+    "avatar": "",
+    "phone": null,
+    "town": null,
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
