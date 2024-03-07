@@ -1,7 +1,7 @@
 from rest_framework import status
 from rest_framework.test import APITestCase, APIClient
 
-from course.models import Lesson
+from course.models import Lesson, Course
 from users.models import User
 
 
@@ -29,7 +29,8 @@ class LessonTestCase(APITestCase):
 
         self.assertEqual(
             response.json(),
-    {'title': 'test_create1', 'image': None, 'description': 'test_create1', 'url': None, 'course': None, 'owner': None}
+            {'title': 'test_create1', 'image': None, 'description': 'test_create1', 'url': None, 'course': None,
+             'owner': None}
         )
 
         self.assertTrue(
@@ -37,7 +38,6 @@ class LessonTestCase(APITestCase):
         )
 
     def test_list_lesson(self):
-
         response = self.client.get(
             '/lesson/',
         )
@@ -47,17 +47,51 @@ class LessonTestCase(APITestCase):
             status.HTTP_200_OK
         )
 
-    def test_destroy_lesson(self):
+    def test_delete_lesson(self):
+        """Тестирование удаления урока"""
 
-        Lesson.objects.create(
-            title='del_test',
-            description='del_test'
+        lesson = Lesson.objects.create(
+            title='Test_lesson',
+            description='Test_lesson',
+            owner=self.user
         )
+
         response = self.client.delete(
-            '/lesson/delete/8/',
+            f'/lesson/delete/{lesson.id}/'
         )
-        self.assertEqual(
+
+        self.assertEquals(
             response.status_code,
             status.HTTP_204_NO_CONTENT
         )
 
+
+class SubscriptionTestCase(APITestCase):
+
+    def setUp(self) -> None:
+        self.client = APIClient()
+        self.user = User.objects.create(email="test@gmail.com", is_superuser=True, is_staff=True)
+        self.client.force_authenticate(user=self.user)
+        Course.objects.create(title='test')
+
+    def test_subscribe_to_course(self):
+
+        data = {
+            "course_id": 1,
+            "user": 1
+        }
+
+        response = self.client.post(
+            '/subscription/',
+            data=data
+        )
+
+        self.assertEqual(
+            response.status_code,
+            status.HTTP_200_OK
+        )
+
+        self.assertEquals(
+            response.json(),
+            {'message': 'Subscription create'}
+        )
