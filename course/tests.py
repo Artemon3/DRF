@@ -95,3 +95,18 @@ class SubscriptionTestCase(APITestCase):
             response.json(),
             {'message': 'Subscription create'}
         )
+
+        response = self.client.post(
+            '/subscription/',
+            data=data
+        )
+
+        self.assertEqual(
+            response.status_code,
+            status.HTTP_200_OK
+        )
+
+        self.assertEquals(
+            response.json(),
+            {'message': 'Subscription delete'}
+        )
